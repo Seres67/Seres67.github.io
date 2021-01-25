@@ -31,14 +31,29 @@
   <link href="cover.css" rel="stylesheet">
 </head>
 <body class="text-center">
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCm2Fi0WS9B_an1o92uEt4JYTuDttIrbgs",
+        authDomain: "bot-search-173612.firebaseapp.com",
+        databaseURL: "https://bot-search-173612.firebaseio.com",
+        projectId: "bot-search-173612",
+        storageBucket: "bot-search-173612.appspot.com",
+        messagingSenderId: "334198137896",
+        appId: "1:334198137896:web:ba59ef38b154d085e7811d"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.analytics();
+</script>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
       <h3 class="masthead-brand">Laurent Haar</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="index.html" onclick="analytics.logEvent('home_button_clicked')">Home</a>
         <a class="nav-link active" href="#">Projects</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="contact.html" onclick="analytics.logEvent('contact_button_clicked')">Contact</a>
       </nav>
     </div>
   </header>
@@ -57,7 +72,7 @@
                                               target="_blank">sleepy-discord</a></u>. More information on Github.
     </p>
     <p class="lead">
-      <a class="btn btn-lg btn-secondary" href="https://github.com/Seres67/modular_discord_bot"
+      <a class="btn btn-lg btn-secondary" href="https://github.com/Seres67/modular_discord_bot" onclick="analytics.logEvent('modular_bot_clicked')"
          rel="noopener noreferrer" target="_blank">Github</a>
     </p>
     <hr>
@@ -67,7 +82,7 @@
       way to store items in a network so you can centralize your storage system.
     </p>
     <p class="lead">
-      <a class="btn btn-lg btn-secondary" href="https://github.com/Seres67/RealisticNetworkStorage"
+      <a class="btn btn-lg btn-secondary" href="https://github.com/Seres67/RealisticNetworkStorage" onclick="analytics.logEvent('RNS_button_clicked')"
          rel="noopener noreferrer" target="_blank">Github</a>
     </p>
   </main>
